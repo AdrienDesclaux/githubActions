@@ -15,8 +15,8 @@ jobs:
 
       - name: Commit and push the new cat image
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "AdrienDesclaux"
+          git config --global user.email "adrien.desclaux@.fr"
           git add cat.jpg
           git commit -m "chore: update cat image 🐱"
           git push
