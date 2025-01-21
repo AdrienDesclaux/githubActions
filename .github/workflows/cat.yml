@@ -1,0 +1,22 @@
+name: Generate cat
+
+on: [push]
+
+jobs:
+  update-cat:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download a random cat image
+        run: curl -sL https://cataas.com/cat -o cat.jpg
+
+      - name: Commit and push the new cat image
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add cat.jpg
+          git commit -m "chore: update cat image 🐱"
+          git push
